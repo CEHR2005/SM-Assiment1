@@ -78,6 +78,7 @@ class PrintStrategyImplementation implements IPrintStrategy{
 	
 }
 
+
 class StatusCodeImplementation implements IStatusCode{
 	private int code;
 	public StatusCodeImplementation(int code){
