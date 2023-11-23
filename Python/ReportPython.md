@@ -1,4 +1,20 @@
-(venv) PS C:\Coding\SM Assiment1\Python> pylint main.py
+# Used tools:
+
+pylint - Pylint is a static code analyser for Python 2 or 3. The latest version supports Python 3.8.0 and above.
+https://pypi.org/project/pylint/
+
+flake8 - flake8 is a command-line utility for enforcing style consistency across Python projects. By default it includes lint checks provided by the PyFlakes project, PEP-0008 inspired style checks provided by the PyCodeStyle project, and McCabe complexity checking provided by the McCabe project. It also includes the pyflakes utility to check for common programming mistakes and the McCabe script to check McCabe complexity.
+https://pypi.org/project/flake8/
+
+## First test:
+Code before any changes:
+
+### Metrics
+LOC: 115
+PLOC: 90
+Comments: 1 
+
+```(venv) PS C:\Coding\SM Assiment1\Python> pylint main.py
 ************* Module main
 main.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 main.py:3:0: C0115: Missing class docstring (missing-class-docstring)
@@ -36,12 +52,13 @@ main.py:100:0: C0115: Missing class docstring (missing-class-docstring)
 main.py:101:4: C0116: Missing function or method docstring (missing-function-docstring)
 main.py:105:4: C0116: Missing function or method docstring (missing-function-docstring)
 main.py:109:4: C0116: Missing function or method docstring (missing-function-docstring)
-
+```
 -----------------------------------
 Your code has been rated at 5.76/10
 
 
 --
+```
 (venv) PS C:\Coding\SM Assiment1\Python> flake8 main.py
 main.py:3:1: E302 expected 2 blank lines, found 1
 main.py:23:1: E302 expected 2 blank lines, found 1
@@ -56,17 +73,23 @@ main.py:81:1: E302 expected 2 blank lines, found 1
 main.py:87:1: E302 expected 2 blank lines, found 1
 main.py:100:1: E302 expected 2 blank lines, found 1
 main.py:114:1: E305 expected 2 blank lines after class or function definition, found 1
+```
 --
 
 
-Update:
-
+## Update:
+Code after changes:
+### Metrics
+LOC: 161
+PLOC: 96
+Comments: 30 
+````
 (venv) PS C:\Coding\SM Assiment1\Python> flake8 main.py
 (venv) PS C:\Coding\SM Assiment1\Python> pylint main.py
 ************* Module main
 main.py:97:0: R0903: Too few public methods (1/2) (too-few-public-methods)
 main.py:109:0: R0903: Too few public methods (1/2) (too-few-public-methods)
 main.py:121:0: R0903: Too few public methods (1/2) (too-few-public-methods)
-
+````
 ------------------------------------------------------------------
 Your code has been rated at 9.65/10 (previous run: 9.53/10, +0.12)
