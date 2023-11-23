@@ -59,3 +59,14 @@ main.py:114:1: E305 expected 2 blank lines after class or function definition, f
 --
 
 
+Update:
+
+(venv) PS C:\Coding\SM Assiment1\Python> flake8 main.py
+(venv) PS C:\Coding\SM Assiment1\Python> pylint main.py
+************* Module main
+main.py:97:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+main.py:109:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+main.py:121:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+
+------------------------------------------------------------------
+Your code has been rated at 9.65/10 (previous run: 9.53/10, +0.12)

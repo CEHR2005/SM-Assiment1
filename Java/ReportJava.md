@@ -180,3 +180,50 @@ Executing c:\Users\sench\.vscode\extensions\sonarsource.sonarlint-vscode-4.1.0-w
 }]
 
 
+
+Update
+[{
+	"resource": "/c:/Coding/SM Assiment1/Java/HelloWorld.java",
+	"owner": "sonarlint",
+	"code": "java:S1220",
+	"severity": 4,
+	"message": "Move this file to a named package.",
+	"source": "sonarlint",
+	"startLineNumber": 1,
+	"startColumn": 1,
+	"endLineNumber": 1,
+	"endColumn": 1
+},{
+	"resource": "/c:/Coding/SM Assiment1/Java/HelloWorld.java",
+	"owner": "sonarlint",
+	"code": "java:S6548",
+	"severity": 4,
+	"message": "A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context. [+1 location]",
+	"source": "sonarlint",
+	"startLineNumber": 29,
+	"startColumn": 7,
+	"endLineNumber": 29,
+	"endColumn": 20
+},{
+	"resource": "/c:/Coding/SM Assiment1/Java/HelloWorld.java",
+	"owner": "sonarlint",
+	"code": "java:S6548",
+	"severity": 4,
+	"message": "A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context. [+1 location]",
+	"source": "sonarlint",
+	"startLineNumber": 41,
+	"startColumn": 7,
+	"endLineNumber": 41,
+	"endColumn": 27
+},{
+	"resource": "/c:/Coding/SM Assiment1/Java/HelloWorld.java",
+	"owner": "sonarlint",
+	"code": "java:S6548",
+	"severity": 4,
+	"message": "A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context. [+1 location]",
+	"source": "sonarlint",
+	"startLineNumber": 111,
+	"startColumn": 7,
+	"endLineNumber": 111,
+	"endColumn": 24
+}]

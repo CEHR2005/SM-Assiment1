@@ -1,30 +1,29 @@
 import java.io.FileDescriptor;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.OutputStream;
-import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 
 public class HelloWorld{
-	private static HelloWorld instance;
-    public static void main(String[] args){
-        instantiateHelloWorldMainClassAndRun();
+	public static void main(String[] args){
+        new HelloWorld();
     }
     
-    public static void instantiateHelloWorldMainClassAndRun(){
-    	instance = new HelloWorld();
-    	
-    }
-    
-    public HelloWorld(){
-    	HelloWorldFactory factory = HelloWorldFactory.getInstance();
-    	IHelloWorld helloWorld = factory.createHelloWorld();
-    	IHelloWorldString helloWorldString = helloWorld.getHelloWorld();
-    	IPrintStrategy printStrategy = helloWorld.getPrintStrategy();
-    	IStatusCode code = helloWorld.print(printStrategy, helloWorldString);
-    	if(code.getStatusCode() != 0){
-    		throw new RuntimeException("Failed to print: " + code.getStatusCode());
-    	}
-    }
+public HelloWorld() {
+	HelloWorldFactory factory = HelloWorldFactory.getInstance();
+	IHelloWorld helloWorld = factory.createHelloWorld();
+	IHelloWorldString helloWorldString = helloWorld.getHelloWorld();
+	IPrintStrategy printStrategy = helloWorld.getPrintStrategy();
+	IStatusCode code = helloWorld.print(printStrategy, helloWorldString);
+	if (code.getStatusCode() != 0) {
+		throw new PrintFailedException("Failed to print: " + code.getStatusCode());
+	}
+}
+
+class PrintFailedException extends RuntimeException {
+	public PrintFailedException(String message) {
+		super(message);
+	}
+}
 }
 
 class StringFactory{
@@ -48,9 +47,15 @@ class PrintStrategyFactory{
 		IPrintStrategy printStrategy = new PrintStrategyImplementation();
 		IStatusCode code = printStrategy.setupPrinting();
 		if(code.getStatusCode() != 0){
-			throw new RuntimeException("Failed to create IPrintStrategy: " + code.getStatusCode());
+			throw new PrintStrategyCreationException("Failed to create IPrintStrategy: " + code.getStatusCode());
 		}
 		return printStrategy;
+	}
+}
+
+class PrintStrategyCreationException extends RuntimeException {
+	public PrintStrategyCreationException(String message) {
+		super(message);
 	}
 }
 
@@ -68,7 +73,7 @@ class PrintStrategyImplementation implements IPrintStrategy{
 	}
 	public IStatusCode print(IHelloWorldString string) {
 		try{
-			print.write(string.getHelloWorldString().getHelloWorldString().concat("\n").getBytes("UTF-8"));
+			print.write(string.getHelloWorldString().getHelloWorldString().concat("\n").getBytes(StandardCharsets.UTF_8));
 			return new StatusCodeImplementation(0);
 		}
 		catch(Exception e){
@@ -99,8 +104,7 @@ class HelloWorldString{
 class HelloWorldStringImplementation implements IHelloWorldString{
 	public HelloWorldString getHelloWorldString(){
 		StringFactory factory = StringFactory.getInstance();
-		HelloWorldString s = factory.createHelloWorldString("Hello, World!");
-		return s;
+		return factory.createHelloWorldString("Hello, World!");
 	}
 }
 
@@ -110,23 +114,20 @@ class HelloWorldFactory{
 		return instance;
 	}
 	public IHelloWorld createHelloWorld(){
-		IHelloWorld helloWorld = new HelloWorldImplementation();
-		return helloWorld;
+		return new HelloWorldImplementation();
 	}
 }
 
 class HelloWorldImplementation implements IHelloWorld{
 	public IHelloWorldString getHelloWorld() {
-		IHelloWorldString string = new HelloWorldStringImplementation();
-		return string;
+		return new HelloWorldStringImplementation();
 	}
 	public IPrintStrategy getPrintStrategy() {
 		PrintStrategyFactory factory = PrintStrategyFactory.getInstance();
 		return factory.createIPrintStrategy();
 	}
 	public IStatusCode print(IPrintStrategy strategy, IHelloWorldString toPrint) {
-		IStatusCode code = strategy.print(toPrint);
-		return code;
+		return strategy.print(toPrint);
 	}
 }
 
