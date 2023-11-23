@@ -11,7 +11,9 @@ Code before any changes:
 
 ### Metrics
 LOC: 115
+
 PLOC: 90
+
 Comments: 1 
 
 ```(venv) PS C:\Coding\SM Assiment1\Python> pylint main.py
@@ -81,7 +83,9 @@ main.py:114:1: E305 expected 2 blank lines after class or function definition, f
 Code after changes:
 ### Metrics
 LOC: 161
+
 PLOC: 96
+
 Comments: 30 
 ````
 (venv) PS C:\Coding\SM Assiment1\Python> flake8 main.py

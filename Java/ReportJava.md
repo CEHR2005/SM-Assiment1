@@ -1,4 +1,14 @@
-SonarLint 
+# Start
+
+## Mertics
+LOC: 146
+
+PLOC: 132
+
+Comments: 0
+
+SonarLint
+````cmd
 Executing c:\Users\sench\.vscode\extensions\sonarsource.sonarlint-vscode-4.1.0-win32-x64\jre\21.0.1-win32-x86_64.tar\bin\java -jar c:\Users\sench\.vscode\extensions\sonarsource.sonarlint-vscode-4.1.0-win32-x64\server\sonarlint-ls.jar -stdio -analyzers c:\Users\sench\.vscode\extensions\sonarsource.sonarlint-vscode-4.1.0-win32-x64\analyzers\sonargo.jar c:\Users\sench\.vscode\extensions\sonarsource.sonarlint-vscode-4.1.0-win32-x64\analyzers\sonarjava.jar c:\Users\sench\.vscode\extensions\sonarsource.sonarlint-vscode-4.1.0-win32-x64\analyzers\sonarjs.jar c:\Users\sench\.vscode\extensions\sonarsource.sonarlint-vscode-4.1.0-win32-x64\analyzers\sonarphp.jar c:\Users\sench\.vscode\extensions\sonarsource.sonarlint-vscode-4.1.0-win32-x64\analyzers\sonarpython.jar c:\Users\sench\.vscode\extensions\sonarsource.sonarlint-vscode-4.1.0-win32-x64\analyzers\sonarhtml.jar c:\Users\sench\.vscode\extensions\sonarsource.sonarlint-vscode-4.1.0-win32-x64\analyzers\sonarxml.jar c:\Users\sench\.vscode\extensions\sonarsource.sonarlint-vscode-4.1.0-win32-x64\analyzers\sonarcfamily.jar c:\Users\sench\.vscode\extensions\sonarsource.sonarlint-vscode-4.1.0-win32-x64\analyzers\sonartext.jar c:\Users\sench\.vscode\extensions\sonarsource.sonarlint-vscode-4.1.0-win32-x64\analyzers\sonariac.jar c:\Users\sench\.vscode\extensions\sonarsource.sonarlint-vscode-4.1.0-win32-x64\analyzers\sonarlintomnisharp.jar
 [Info  - 16:03:43.487] Started embedded server on port 64120
 [Info  - 16:03:47.002] Analyzing file "file:///c:/Coding/SM%20Assiment1/HelloWorld.java"...
@@ -11,7 +21,9 @@ Executing c:\Users\sench\.vscode\extensions\sonarsource.sonarlint-vscode-4.1.0-w
 [Info  - 16:14:14.346] Found 0 issues
 [Info  - 16:18:51.085] Analyzing file "file:///c:/Coding/SM%20Assiment1/Java/HelloWorld.java"...
 [Info  - 16:18:51.289] Found 15 issues
+````
 
+````json
 [{
 	"resource": "/c:/Coding/SM Assiment1/Java/HelloWorld.java",
 	"owner": "sonarlint",
@@ -179,9 +191,17 @@ Executing c:\Users\sench\.vscode\extensions\sonarsource.sonarlint-vscode-4.1.0-w
 	"endColumn": 45
 }]
 
+````
 
+#  Update
 
-Update
+## Metrics
+LOC: 148
+
+PLOC: 133
+
+Comments: 0
+````json
 [{
 	"resource": "/c:/Coding/SM Assiment1/Java/HelloWorld.java",
 	"owner": "sonarlint",
@@ -227,3 +247,4 @@ Update
 	"endLineNumber": 111,
 	"endColumn": 24
 }]
+````
